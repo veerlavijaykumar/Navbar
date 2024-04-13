@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //callbacks
+        function Load(src,callback)
+        {
+            let script=document.createElement("script");
+            script.src=src;
+            script.onload=()=>
+            {
+                console.log("Loaded Script is :"+src);
+                callback(null,src);
+            }
+            script.onerror=()=>
+            {
+                console.log("Loaded Script got errors"+" "+src);
+                callback(new Error("Call to Manager"));
+            }
+            document.head.appendChild(script);
+        }
+        function hello(error,src)
+        {
+            if(error)
+            {
+                console.log("Veerla Viajy Kumar Yadav");
+            }
+            else{
+                alert("Hello Everyone"+" "+src);
+            }
+        }
+        Load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",hello);
+    </script>
+</body>
+</html>

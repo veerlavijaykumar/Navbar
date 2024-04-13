@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //promises
+  /* //resolve //reject //state //result
+  let p1=new Promise((resolve,reject)=>
+  {
+    console.log("Promise1 is executed");
+    resolve(true);
+    setTimeout(()=>
+    {
+        console.log("MS Dhoni");
+    },2000);
+  });
+  let p2=new Promise((resolve,reject)=>
+  {
+    console.log("Promise2 is executed");
+    reject(new Error("Errors are in this code"));
+    setTimeout(()=>
+    {
+        console.log("Virat Kohli");
+    },2000);
+  });
+  p1.then((value)=>
+  {
+    console.log(value);
+  });
+  
+  p2.catch((error)=>
+  {
+    console.log("Some errors are identified");
+  }
+  ); */
+  //Load Acript using promises
+
+ /* function Load(src)
+  {
+    let p=new Promise((resolve,reject)=>
+    {
+        let script=document.createElement("script");
+        script.src=src;
+        script.onload=()=>{resolve();};
+        script.onerror=(error)=>
+        {
+            reject(error);
+        }
+        document.body.append(script);
+    });
+    return p;
+  } 
+  let a=Load("https://cdnjs.cloudflae.com/ajax/libs/jquery/3.6.0/jquery.min.js");
+  a.then((value)=>
+  console.log("Loaded script successful"));
+  a.catch((error)=>
+  {
+    console.log("the error is : "+error);
+  })*/
+// Promise Chaining
+/*let p1=new Promise((resolve,reject)=>
+{
+    resolve("hello motu");
+});
+p1.then((value)=>
+{
+    console.log(value);
+    let p2=new Promise((resolve,reject)=>
+    {
+       resolve("hello patlu");
+       
+    });
+    return p2;
+}).then((value)=>console.log(value));*/
+function loadscript(scr)
+{
+
+  let p1=new Promise((resolve,reject)=>
+  {
+   script=document.createElement('script');
+   script.src=src;
+   script.onload= resolve('true');
+  script.onerror=reject(new Error("It has some error"));  
+  });
+  p1.then((value)=>
+  console.log(value));
+  p1.catch((error)=>
+  console.log("Error is Comming"));
+}
+
+
+</script>
+
+</body>
+</html>

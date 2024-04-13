@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box
+    {
+      width:800px;
+      height:800px;
+      display:grid;
+      grid-template-rows: 100px 100px 100px 100px 100px;
+      grid-template-columns: 300px 300px;
+      justify-content: center;
+      align-content: center;
+      
+    }
+  @media(max-width:600px)
+  {
+    #box
+    {
+      grid-template-columns:100px;
+    }
+  }
+    
+    </style>
+</head>
+<body>
+ <div id="box">
+  <div style="background-color:blue">Box1</div>
+  <div style="background-color:green">Box2</div>
+  <div style="background-color:purple">Box3</div>
+  <div style="background-color:red">Box4</div>
+  <div style="background-color:yellow">Box5</div>
+  <div style="background-color:pink">Box6</div>
+  <div style="background-color:crimson">Box7</div>
+  <div style="background-color:indigo">Box8</div>
+  <div style="background-color:orange">Box9</div>
+  <div style="background-color:aquamarine">Box10</div>
+ </div>
+</body>
+ 
+</html>

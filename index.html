@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #navbar {
+            height: 60px;
+            display: flex;
+            background-color: #c3c3c3;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #navbar:first-child
+        {
+            color:tomato;
+        }
+        
+        #navbar #icon {
+            display: none;
+        }
+       
+        a {
+            text-decoration: none;
+        }
+        
+        #navbarResponsive {
+            display: none;
+        }
+        
+        @media(max-width: 600px) {
+            #navbar > div:not(:first-child) {
+                display: none;
+            }
+            
+            #navbar #icon {
+                display: block;
+            }
+            
+            #navbarResponsive.show {
+                display: flex;
+                width:100vw;
+                height:100px;
+                background-color:#00000046;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            #navbar:first-child
+            {
+                color:coral;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><h3>VIJAY KUMAR</h3></div>
+        <div><a href="https://www.google.com">About</a></div>
+        <div><a href="https://www.youtube.com">Home</a></div>
+        <div><a href="https://www.linkedin.com">Contact Us</a></div>
+        <div><a href="https://www.facebook.com">Help</a></div>
+        <a href="javascript:void(0)" onclick="toggleMenu()" id="icon"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="navbarResponsive">
+        <div><a href="https://www.google.com">About</a></div>
+        <div><a href="https://www.youtube.com">Home</a></div>
+        <div><a href="https://www.linkedin.com">Contact Us</a></div>
+        <div><a href="https://www.facebook.com">Help</a></div>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            let navbarResponsive = document.getElementById("navbarResponsive");
+            navbarResponsive.classList.toggle("show");
+            let icon = document.getElementById("icon");
+            icon.style.display = "none";
+           
+            
+        }
+    </script>
+</body>
+</html>
